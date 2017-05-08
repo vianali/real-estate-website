@@ -1,10 +1,16 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
-  # In the development environment your application's code is reloaded on
-  # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  config.action_mailer.default_url_options = { host: 'https://realestatewebsite-vianali.c9users.io' }
+    config.action_mailer.smtp_settings = {
+       :address              => "smtp.gmail.com",
+       :port                 =>  587,
+       :user_name            => "test2.vian.test2",
+       :password             => "1234567812345678",
+       :authentication       => 'plain',
+       :enable_starttls_auto => true  }
+  
+  
+  
+    config.cache_classes = false
 
   # Do not eager load code on boot.
   config.eager_load = false

@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @owner.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @owner.phone_number %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @owner.province %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @owner.address %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @owner.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @owner.description %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @owner.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @owner.longitude %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @owner.state %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @owner.price %>
+</p>
+
+<p>
+  <strong>Avalibility:</strong>
+  <%= @owner.avalibility %>
+</p>
+
+<p>
+  <strong>Real state number:</strong>
+  <%= @owner.real_state_number %>
+</p>
+
+<h3>Nearby locations</h3>
+<ul>
+<% for owner in @owner.nearbys(2) %>
+ <li><%= link_to owner.address, owner %> (<%= owner.distance.round(2) %> miles)</li>
+<% end %>
+</ul>
+
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@owner.latitude}%2C#{@owner.longitude}" %>
+
+<%= link_to 'Edit', edit_owner_path(@owner) %> |
+<%= link_to 'Back', owners_path %>

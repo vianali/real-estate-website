@@ -70,5 +70,7 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@owner.latitude}%2C#{@owner.longitude}" %>
 
+<%= image_tag @owner.avatar.url if @owner.avatar? %>
+
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
 <%= link_to 'Back', owners_path %>

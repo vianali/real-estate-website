@@ -1,4 +1,11 @@
+<div class="col-md-4"></div>
+
+<div class="col-md-4">
 <p id="notice"><%= notice %></p>
+
+<br>
+<h1>Post Details</h1>
+<br>
 
 <p>
   <strong>Name:</strong>
@@ -60,6 +67,12 @@
   <%= @owner.real_state_number %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @owner.avatar.url if @owner.avatar? %>
+</p>
+
 <h3>Nearby locations</h3>
 <ul>
 <% for owner in @owner.nearbys(2) %>
@@ -70,7 +83,10 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@owner.latitude}%2C#{@owner.longitude}" %>
 
-<%= image_tag @owner.avatar.url if @owner.avatar? %>
-
+<br> <br> <br>
 <%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
+<%= link_to 'Back', owners_path,class:"btn btn-info"  %>
+<br> <br> <br>
+</div>
+
+<div class="col-md-4"></div>

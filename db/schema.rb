@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510115644) do
+ActiveRecord::Schema.define(version: 20170516101216) do
 
   create_table "owners", force: :cascade do |t|
     t.string   "name"
     t.string   "phone_number"
     t.string   "province"
     t.string   "address"
-    t.string   "type"
+    t.string   "real_state_type"
     t.text     "description"
     t.float    "latitude"
     t.float    "longitude"

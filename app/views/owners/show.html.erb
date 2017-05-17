@@ -28,8 +28,8 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @owner.type %>
+  <strong>Real State Type:</strong>
+  <%= @owner.real_state_type %>
 </p>
 
 <p>
@@ -84,8 +84,8 @@
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@owner.latitude}%2C#{@owner.longitude}" %>
 
 <br> <br> <br>
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path,class:"btn btn-info"  %>
+
+<%= link_to "Back", :back,class:"btn btn-info" %>
 <br> <br> <br>
 </div>
 

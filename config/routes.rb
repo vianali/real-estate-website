@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :owners
 mount Monologue::Engine, at: '/' 
+get 'monologue/posts' => 'monologue/posts#index'
+
 end
